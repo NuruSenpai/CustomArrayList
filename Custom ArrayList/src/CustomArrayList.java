@@ -24,6 +24,34 @@ public class CustomArrayList<T> {
         return size;
     }
 
+    public void removeAtIndex(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        for (int i = index; i < size - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        size--;
+    }
+
+    public void remove(T element) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(element)) {
+                removeAtIndex(i);
+                return;
+            }
+        }
+    }
+
+    public boolean contains(T element) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(element)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void Capacity(int minCap) {
 
         if (minCap > array.length) {
