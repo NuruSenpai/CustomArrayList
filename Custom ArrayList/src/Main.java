@@ -9,8 +9,6 @@ class Main{
         customList.remove(1);
         System.out.println(customList.size());
         System.out.println(customList.get(0));
-        ArrayList<Integer> qwe = new ArrayList<>();
-        qwe.add(3);
-        System.out.println(qwe.contains(3));
+
     }
 }
